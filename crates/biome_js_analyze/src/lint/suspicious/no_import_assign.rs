@@ -1,5 +1,5 @@
 use crate::services::semantic::Semantic;
-use biome_analyze::{context::RuleContext, declare_rule, Rule, RuleDiagnostic, RuleSource};
+use biome_analyze::{context::RuleContext, declare_lint_rule, Rule, RuleDiagnostic, RuleSource};
 use biome_console::markup;
 use biome_js_semantic::ReferencesExtensions;
 use biome_js_syntax::{
@@ -9,7 +9,7 @@ use biome_js_syntax::{
 
 use biome_rowan::{declare_node_union, AstNode};
 
-declare_rule! {
+declare_lint_rule! {
     ///  Disallow assigning to imported bindings
     ///
     /// ## Examples
